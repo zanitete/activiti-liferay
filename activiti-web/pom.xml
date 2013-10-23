@@ -4,14 +4,14 @@
 	<parent>
 		<groupId>net.emforge</groupId>
 		<artifactId>activiti-liferay</artifactId>
-		<version>6.1.1.13</version>
+		<version>6.1.1.13.1</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.emforge</groupId>
 	<artifactId>activiti-web</artifactId>
-	<version>6.1.1.13</version>
+	<version>6.1.1.13.1</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -291,6 +291,13 @@
 			<artifactId>activiti-rest-stubs</artifactId>
 			<version>${pom.version}</version>
 		</dependency>
+<!--
+        <dependency>
+            <groupId>org.activiti.examples</groupId>
+            <artifactId>activiti-examples</artifactId>
+            <version>1.0-SNAPSHOT</version>
+       </dependency>
+-->
 		
 	</dependencies>
 
