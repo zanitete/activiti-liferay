@@ -106,4 +106,23 @@ public class IdMappingService {
 			return Long.valueOf(screenName);
 		}
 	}
+	
+	/**
+	 * 
+	 * @param email
+	 * @return
+	 * @throws WorkflowException
+	 */
+	public long getUserIdByEmail(String email) throws WorkflowException {
+		try {
+			// TODO - for now always use default company - need to be changed
+			Company defaultCompany =  CompanyLocalServiceUtil.getCompanyByWebId(PropsUtil.get(PropsKeys.COMPANY_DEFAULT_WEB_ID));
+			
+			User user = UserLocalServiceUtil.getUserByEmailAddress(defaultCompany.getCompanyId(), email);
+			
+			return user.getUserId();
+		} catch (Exception ex) {
+			throw new WorkflowException("Cannot get user", ex);
+		}
+	}
 }

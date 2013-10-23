@@ -98,9 +98,18 @@ public class LiferayIdentityService {
 			com.liferay.portal.model.User liferayUser = UserLocalServiceUtil.getUser(idMappingService.getUserId(userName));
 			return new UserImpl(liferayUser);
 		} catch (Exception ex) {
-			_log.error("Cannot find user " + userName + " : " + ex.getMessage());
+			_log.error("Cannot find user " + userName, ex);
 			return null;
 		}
 	}
 
+	public UserEntity findUserByEmail(String email) {
+		try {
+			com.liferay.portal.model.User liferayUser = UserLocalServiceUtil.getUser(idMappingService.getUserIdByEmail(email));
+			return new UserImpl(liferayUser);
+		} catch (Exception ex) {
+			_log.error("Cannot find user " + email, ex);
+			return null;
+		}
+	}
 }
