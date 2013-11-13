@@ -382,9 +382,25 @@ public class LiferayService {
 													  toCopy.getFileEntryTypeId(), toCopy.getFieldsMap(toCopy.getFileVersion().getFileVersionId()), 
 													  file, is, toCopy.getSize(), serviceContext);
 			
-			DLFileEntryLocalServiceUtil.addFileEntryResources(
-					dlFileEntry, true, true);
-			
+//			DLFileEntryLocalServiceUtil.addFileEntryResources(
+//					dlFileEntry, true, true);
+		    
+            DLFileEntryLocalServiceUtil.addFileEntry(destOwnerId,
+            										  targetFolder.getGroupId(),
+            										  targetFolder.getRepositoryId(), 
+  												  	  targetFolder.getFolderId(),
+  												  	  toCopy.getTitle(), 
+  													  contentType, 
+  													  toCopy.getTitle(),
+  													  toCopy.getDescription(), 
+  													  "", // changelog
+  													  toCopy.getFileEntryTypeId(),
+  													  toCopy.getFieldsMap(toCopy.getFileVersion().getFileVersionId()),
+  													  file, 
+  													  is, 
+  													  toCopy.getSize(),
+  													  serviceContext
+                                                    );	
 			DLFileVersion dlFileVersion = dlFileEntry.getFileVersion();
 			AssetEntryLocalServiceUtil.updateEntry(
 					destOwnerId, dlFileEntry.getGroupId(),

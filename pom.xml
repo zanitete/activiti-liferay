@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.emforge</groupId>
   <artifactId>activiti-liferay</artifactId>
-  <version>6.1.1.13.2-SNAPSHOT</version>
+  <version>6.1.1.13.2</version>
   <packaging>pom</packaging>
   
   <properties>
   	<activiti.version>5.13</activiti.version>
-	<liferay.version>6.1.1</liferay.version>
-	<liferay.plugin.version>6.1.1</liferay.plugin.version>
+	<liferay.version>6.1.2</liferay.version>
+	<liferay.plugin.version>6.1.2</liferay.plugin.version>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
@@ -76,5 +76,18 @@
 		<name>EmDev Limited</name>
 		<url>http://www.emdev.ru</url>
 	</organization>
+
+      <distributionManagement>
+      <repository>
+          <id>releases</id>
+          <name>BBP Nexus Repository</name>
+          <url>https://bbpteam.epfl.ch/repository/nexus/content/repositories/releases/</url>
+      </repository>
+      <snapshotRepository>
+          <id>snapshots</id>
+          <name>BBP Nexus Repository - SNAPSHOTS</name>
+          <url>https://bbpteam.epfl.ch/repository/nexus/content/repositories/snapshots/</url>
+      </snapshotRepository>
+  </distributionManagement>
   
 </project>
